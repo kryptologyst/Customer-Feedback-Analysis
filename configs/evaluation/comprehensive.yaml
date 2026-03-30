@@ -1,0 +1,52 @@
+# @package evaluation
+_target_: src.eval.comprehensive_evaluator.ComprehensiveEvaluator
+
+# Evaluation metrics
+metrics:
+  classification:
+    - accuracy
+    - precision_macro
+    - recall_macro
+    - f1_macro
+    - roc_auc_ovr
+    - confusion_matrix
+    - classification_report
+  
+  business:
+    - satisfaction_score
+    - response_time_analysis
+    - escalation_rate
+    - category_performance
+    - sentiment_trends
+
+# Cross-validation
+cross_validation:
+  enabled: true
+  cv_folds: 5
+  stratify: true
+  shuffle: true
+
+# Statistical tests
+statistical_tests:
+  enabled: true
+  confidence_level: 0.95
+  multiple_comparison_correction: "bonferroni"
+
+# Model comparison
+model_comparison:
+  enabled: true
+  baseline_models:
+    - textblob
+    - vader
+    - naive_bayes
+  significance_test: true
+
+# Business impact analysis
+business_impact:
+  enabled: true
+  cost_matrix:
+    false_positive: 1.0
+    false_negative: 5.0
+    true_positive: 0.0
+    true_negative: 0.0
+  roi_calculation: true

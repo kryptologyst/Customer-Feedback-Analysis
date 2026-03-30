@@ -1,0 +1,32 @@
+# @package model
+_target_: src.models.sentiment_models.BERTSentimentModel
+
+# Model architecture
+model_name: "distilbert-base-uncased"
+num_labels: 3
+dropout_rate: 0.1
+
+# Training parameters
+batch_size: 16
+learning_rate: 2e-5
+num_epochs: 3
+warmup_steps: 100
+weight_decay: 0.01
+gradient_accumulation_steps: 1
+
+# Optimization
+optimizer: "adamw"
+scheduler: "linear"
+max_grad_norm: 1.0
+
+# Early stopping
+early_stopping:
+  enabled: true
+  patience: 3
+  min_delta: 0.001
+
+# Model saving
+save_best_model: true
+save_last_model: true
+save_checkpoints: true
+checkpoint_frequency: 1

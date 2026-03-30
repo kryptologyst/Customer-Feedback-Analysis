@@ -1,0 +1,62 @@
+# @package _global_
+defaults:
+  - _self_
+  - data: synthetic
+  - model: bert_sentiment
+  - evaluation: comprehensive
+
+# Project settings
+project_name: "customer_feedback_analysis"
+version: "1.0.0"
+description: "Advanced Customer Feedback Analysis with Sentiment Analysis and Business Insights"
+
+# Paths
+paths:
+  data_dir: "data"
+  models_dir: "models"
+  assets_dir: "assets"
+  logs_dir: "logs"
+
+# Random seeds for reproducibility
+seed: 42
+numpy_seed: 42
+torch_seed: 42
+
+# Logging
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Model settings
+model:
+  max_length: 512
+  batch_size: 16
+  learning_rate: 2e-5
+  num_epochs: 3
+  warmup_steps: 100
+
+# Evaluation settings
+evaluation:
+  test_size: 0.2
+  val_size: 0.1
+  random_state: 42
+  metrics:
+    - accuracy
+    - precision_macro
+    - recall_macro
+    - f1_macro
+    - roc_auc_ovr
+    - confusion_matrix
+
+# Business metrics
+business_metrics:
+  satisfaction_threshold: 0.7
+  response_time_threshold: 24  # hours
+  escalation_threshold: 0.3
+
+# Privacy and compliance
+privacy:
+  anonymize_pii: true
+  hash_customer_ids: true
+  retention_days: 365
+  gdpr_compliant: true

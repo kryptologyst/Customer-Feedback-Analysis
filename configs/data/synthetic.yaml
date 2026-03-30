@@ -1,0 +1,29 @@
+# @package data
+_target_: src.data.synthetic_data.SyntheticFeedbackData
+
+# Dataset parameters
+n_samples: 1000
+n_categories: 5
+sentiment_distribution:
+  positive: 0.4
+  neutral: 0.3
+  negative: 0.3
+
+# Text generation parameters
+min_length: 10
+max_length: 200
+avg_length: 50
+
+# Categories for feedback
+categories:
+  - "product_quality"
+  - "customer_service"
+  - "shipping_delivery"
+  - "website_app"
+  - "pricing_value"
+
+# Synthetic customer attributes
+customer_attributes:
+  n_segments: 3
+  include_demographics: true
+  anonymize_data: true
